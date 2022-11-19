@@ -145,6 +145,7 @@ console.log(firstName.replace("e", "i"))   // "Piti"
 // "substring" lets you get pieces out of a string
 // It takes two parts, the character number to start at and the character number to end at.
 // Note that the first character is "0", the second is "1".
+// Counting from 0 is refered to as the index of the character in the string.
 var learn = "I am learning JavaScript!"
 console.log(learn.substring(0, 13))        // This gives us "I am learning"
 console.log(learn.substring(14, 24))       // This gives us "JavaScript"
@@ -163,10 +164,10 @@ console.log(learn.substring(index, index + 5))  // "learn"
 // An array in JavaScript is a list of things.  It's like a box that we can put many things into.
 // Square brackets [] are how we often do things with arrays
 var myList = []                                 // This is an empty array
-let fruits = ["apples", "oranges", "bananas"]   // This array has 3 items in it
+var fruits = ["apples", "oranges", "bananas"]   // This array has 3 items in it
 myList = ['banana', 3, "salad", "milk"]         // We set this array to these 4 items
 
-// We can get things out of the array by index.  Just like strings, indexes start at 0.
+// We can get things out of the array by index.  Just like strings, array indexes start at 0.
 console.log(fruits[0])                          // "apples"
 console.log(fruits[1])                          // "oranges"
 
@@ -190,3 +191,8 @@ for (var i = 0; i < fruits.length; i++) {
 for (var item of fruits) {
   console.log(item.toUpperCase())
 }
+
+// We can take the last item off of the end of an array with "pop".  It will also give us its value.
+var oneFruit = fruits.pop()
+console.log(oneFruit)                           // "kiwi" was the last thing in the array
+console.log(fruits)                             // This is now "apples", "mango", "bananas"

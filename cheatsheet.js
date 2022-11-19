@@ -46,14 +46,14 @@ console.log(n)               // Remeber our variable n?  This shows what's in it
 
 var x = 8
 var y = 2
-var z = x + y                // z is 5
+var z = x + y                // z is 10
 console.log(z)
 
 console.log(x - y)           // 6
 console.log(x * y)           // multiplication gets us 16
 console.log(x / y)           // division gets us 4
-console.log(Math.min(x, y, z)) // Math.min looks for the smallest number in the things you give it. This is 2 (y is 2).
-console.log(Math.max(x, y, z)) // Math.max then looks for the largest number. It's 8.
+console.log(Math.min(x, y, z)) // "Math.min" looks for the smallest number in the things you give it. This is 2 (y is 2).
+console.log(Math.max(x, y, z)) // "Math.max" then looks for the largest number. It's 10.
 
 x = x + 1                    // A variable can even use itself in a calculation.  This takes x and increases its value by 1.
 x++                          // We do this so much, that ++ is a shorter way to write the same thing.
@@ -71,11 +71,11 @@ var times = 1
 while (times < 10) {         // This loop will keep going as long as times is less than 10.
     console.log(times)
     times++
-}                            // The { } curly braces mark the start and end of the while loop.
+}                            // The { } curly braces mark the start and end of the "while" loop.
 
-// A for loop is the same thing, but lets us write it more concisely.
-// There are 3 parts in a for loop, separated by ;
-// The first part is the variable we want to use.  We're using "i" here, which is just like "times" in the above while loop.
+// A "for" loop is the same thing, but lets us write it more concisely.
+// There are 3 parts in a "for" loop, separated by ;
+// The first part is the variable we want to use.  We're using "i" here, which is just like "times" in the above "while" loop.
 // The second part is the comparison, just like "times < 10" above.
 // The third part is what to do after each loop, like "times++" above.
 for (var i = 1; i < 10; i++) {
@@ -99,7 +99,7 @@ console.log(2 !== 4)         // not equal to each other: true
 console.log("dog" === "cat") // false
 console.log(s !== "cat")     // true
 
-// The if statement lets us compare a value and only do something if it's true.
+// The "if" statement lets us compare a value and only do something if it's true.
 if ("dog" === "cat") {
   console.log("Something weird has happened.")
 }
@@ -114,7 +114,7 @@ if (2 < 4 && 6 > 8) {
     console.log("Numbers no longer have meaning.")
 }
 
-// We can add an else statement to do something different if the comparison is false.
+// We can add an "else" statement to do something different if the comparison is false.
 if (2 > 4) {
   console.log("We will never see this happen.")
 } else {
@@ -135,38 +135,58 @@ var fullName = firstName + " " + lastName; // fullName is now "Pete Vasi"
 console.log(firstName.toLowerCase())       // "pete"
 console.log(firstName.toUpperCase())       // "PETE"
 
-// trim gets rid of extra spaces at the beginning and the end.
+// "trim" gets rid of extra spaces at the beginning and the end.
 var airy = "    I'm in space "
 console.log(airy.trim())                   // "I'm in space"
 
-// replace changes from one thing to another
+// "replace" changes from one thing to another
 console.log(firstName.replace("e", "i"))   // "Piti"
 
-// substring
+// "substring" lets you get pieces out of a string
+// It takes two parts, the character number to start at and the character number to end at.
+// Note that the first character is "0", the second is "1".
+var learn = "I am learning JavaScript!"
+console.log(learn.substring(0, 13))        // This gives us "I am learning"
+console.log(learn.substring(14, 24))       // This gives us "JavaScript"
 
-// indexOf
+// "indexOf" lets us search within a string and get the index of what we find.
+console.log(learn.indexOf("Java"))         // This is 14
+// We can use this in combination with "substring" for some fun things.
+var index = learn.indexOf("l")
+console.log(learn.substring(index, index + 5))  // "learn"
 
 
 //////////////////////////////
 // Arrays (lists of things) //
 //////////////////////////////
 
-var myList = []
-let fruits = ["apples", "oranges", "bananas"]
-myList = ['banana', 3, "salad", "milk"]
+// An array in JavaScript is a list of things.  It's like a box that we can put many things into.
+// Square brackets [] are how we often do things with arrays
+var myList = []                                 // This is an empty array
+let fruits = ["apples", "oranges", "bananas"]   // This array has 3 items in it
+myList = ['banana', 3, "salad", "milk"]         // We set this array to these 4 items
 
-fruits[0]
-fruits[1]
+// We can get things out of the array by index.  Just like strings, indexes start at 0.
+console.log(fruits[0])                          // "apples"
+console.log(fruits[1])                          // "oranges"
 
+// We can also set values in a specific spot in an array
 fruits[1] = "mango"
-fruits[1] = 3
+console.log(fruits)                             // This is now "apples", "mango", "bananas"
 
-// append
+// If we want to add something to the end of an array, "push" will do that
+fruits.push("kiwi")
+console.log(fruits)                             // This is now "apples", "mango", "bananas", "kiwi"
 
-for (var item of fruits) {
-    console.log(item)
+// "length" will tell us the size of an array
+console.log(fruits.length)                      // This is 4
+
+// If we combine that with our "for" loop from above, we could do something with every item in an array.
+for (var i = 0; i < fruits.length; i++) {
+    console.log("The value is: " + fruits[i].toUpperCase())
 }
 
-for (let i = 0; i < myList.length; i++) {
-    console.log("The value is: " + myList[i])
+// We loop through all items in arrays so often, there's a shortcut version of "for" that does that.
+for (var item of fruits) {
+  console.log(item.toUpperCase())
 }

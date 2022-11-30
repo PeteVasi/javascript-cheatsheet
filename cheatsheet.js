@@ -161,7 +161,7 @@ console.log(learn.substring(index, index + 5))  // "learn"
 // Arrays (lists of things) //
 //////////////////////////////
 
-// An array in JavaScript is a list of things.  It's like a box that we can put many things into.
+// An array in JavaScript is a variable that holds list of things.  It's like a box that we can put many things into.
 // Square brackets [] are how we often do things with arrays
 var myList = []                                 // This is an empty array
 var fruits = ["apples", "oranges", "bananas"]   // This array has 3 items in it

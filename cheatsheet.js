@@ -131,13 +131,23 @@ var firstName = "Pete";
 var lastName = "Vasi";
 var fullName = firstName + " " + lastName; // fullName is now "Pete Vasi"
 
-// We can also change the case of strings
+// Strings have a length
+console.log(fullName.length)               // 9
+
+// We can change the case of strings
 console.log(firstName.toLowerCase())       // "pete"
 console.log(firstName.toUpperCase())       // "PETE"
 
 // "trim" gets rid of extra spaces at the beginning and the end.
 var airy = "    I'm in space "
 console.log(airy.trim())                   // "I'm in space"
+
+// A string without anything in it is often called an empty string.  It has 0 length.
+var spacey = "     "
+var emptyString = spacey.trim()
+if (emptyString.length === 0) {
+  console.log("The empty string is empty.")
+}
 
 // "replace" changes from one thing to another
 console.log(firstName.replace("e", "i"))   // "Piti"
